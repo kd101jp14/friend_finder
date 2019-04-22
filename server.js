@@ -10,6 +10,10 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Router
+require("./routing/apiRoutes")(app);
+require("./routing/htmlRoutes")(app);
+
 // Listener on port 3000
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
