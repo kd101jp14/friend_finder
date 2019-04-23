@@ -203,19 +203,21 @@
       lastName: $("#lastName")
         .val()
         .trim(),
-      question1: $("#answer1").val(),
-      question2: $("#answer2").val(),
-      question3: $("#answer3").val(),
-      question4: $("#answer4").val(),
-      question5: $("#answer5").val(),
-      question6: $("#answer6").val(),
-      question7: $("#answer7").val(),
-      question8: $("#answer8").val(),
-      question9: $("#answer9").val(),
-      question10: $("#answer10").val()
+      answer1: $("#answer1").val(),
+      answer2: $("#answer2").val(),
+      answer3: $("#answer3").val(),
+      answer4: $("#answer4").val(),
+      answer5: $("#answer5").val(),
+      answer6: $("#answer6").val(),
+      answer7: $("#answer7").val(),
+      answer8: $("#answer8").val(),
+      answer9: $("#answer9").val(),
+      answer10: $("#answer10").val()
     };
 
     console.log(newUser);
+
+    var userAnswersArr = [];
 
     $.post("/api/friends", newUser, function(data) {
       alert("Your new friend is...");
@@ -233,6 +235,30 @@
       $("#answer8").val("1");
       $("#answer9").val("1");
       $("#answer10").val("1");
+
+      // Remove the name from the data so that the object may be looped through
+      // and the answers may be pushed into an array
+      delete newUser.firstName;
+      delete newUser.lastName;
+
+      for (key in newUser) {
+        userAnswersArr.push(newUser[key]);
+      }
+      console.log(userAnswersArr);
     });
+
+    // * Convert each user's results into a simple array of numbers
+    // (ex: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`).
+    // * With that done, compare the difference between current user's scores
+    // against those from other users, question by question.
+    // Add up the differences to calculate the `totalDifference`.
+    // * Example:
+    // * User 1: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`
+    // * User 2: `[3, 2, 6, 4, 5, 1, 2, 5, 4, 1]`
+    // * Total Difference: **2 + 1 + 2 =** **_5_**
+    // * Remember to use the absolute value of the differences.
+    // * Put another way: no negative solutions!
+    // * Your app should calculate both `5-3` and `3-5` as `2`, and so on.
+    // * The closest match will be the user with the least amount of difference.
   });
 </script>
