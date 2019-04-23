@@ -1,0 +1,7 @@
+body {
+    background-color: yellow;
+}
+
+.jumbotron {
+    background-image: url(../images/bubbles.jpg)!important;
+}

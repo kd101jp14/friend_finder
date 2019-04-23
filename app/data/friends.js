@@ -2,7 +2,7 @@ var friends = [
     {
         "firstName":"Leslie",
         "lastName":"King",
-        "photo":"https://celebritypictures.wiki/images/1678849/1678849_1.jpeg",
+        "photo":"https://celebritypictures.wiki/images/1830767/1830767_15.jpeg",
         "scores":[
             5,
             4,
@@ -19,7 +19,7 @@ var friends = [
     {
         "firstName":"Mia",
         "lastName":"Hardy",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/7/7f/Emma_Watson_2013.jpg",
+        "photo":"https://celebritypictures.wiki/images/0823655/0823655_2.jpeg",
         "scores":[
             1,
             2,
@@ -36,7 +36,7 @@ var friends = [
     {
         "firstName":"Mike",
         "lastName":"Robertson",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/0/0d/Ben_Affleck_2009_(cropped).jpg",
+        "photo":"https://celebritypictures.wiki/images/5489601/5489601_15.jpeg",
         "scores":[
             4,
             5,
@@ -53,7 +53,7 @@ var friends = [
     {
         "firstName":"Pete",
         "lastName":"Wright",
-        "photo":"https://media.istockphoto.com/photos/real-people-mixed-race-teenage-boy-in-sunlight-closeup-headshot-picture-id161165864?k=6&m=161165864&s=612x612&w=0&h=uGyvsXJd_X9tTYo7JMgkfIcbpJqltXLF6XvnLwKcETE=",
+        "photo":"https://celebritypictures.wiki/images/0779762/0779762_1.jpeg",
         "scores":[
             1,
             1,
@@ -70,7 +70,7 @@ var friends = [
     {
         "firstName":"Sydney",
         "lastName":"Mitchel",
-        "photo":"http://media.istockphoto.com/photos/horizontal-headshot-of-an-attractive-african-american-business-woman-picture-id514623738?k=6&m=514623738&s=170667a&w=0&h=tWT9KkgaKf-NWeUzixVC6wr0Rh-ZL1DZdNQFjat4PBQ=",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Alia_Bhatt_2016.jpg/130px-Alia_Bhatt_2016.jpg",
         "scores":[
             2,
             5,
@@ -87,7 +87,7 @@ var friends = [
     {
         "firstName":"Courtney",
         "lastName":"Green",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/8/87/Salma_Hayek_Deauville_2012.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Kangna_Ranaut%2C_July_2015.jpg/170px-Kangna_Ranaut%2C_July_2015.jpg",
         "scores":[
             4,
             3,
@@ -104,7 +104,7 @@ var friends = [
     {
         "firstName":"Gina",
         "lastName":"Dawson",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/b/b2/Lupita_Nyong%27o_May_2017.jpg",
+        "photo":"https://celebritypictures.wiki/images/1373667/1373667_3.jpeg",
         "scores":[
             1,
             5,
@@ -121,7 +121,7 @@ var friends = [
     {
         "firstName":"Greg",
         "lastName":"Lowe",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Ryan_Gosling_2_Cannes_2011_%28cropped%29.jpg/1920px-Ryan_Gosling_2_Cannes_2011_%28cropped%29.jpg",
+        "photo":"https://celebritynetworthwiki.org/wp-content/uploads/profiles/Adam-Goldberg-Net-Worth.jpeg",
         "scores":[
             3,
             3,
@@ -138,7 +138,7 @@ var friends = [
     {
         "firstName":"Jared",
         "lastName":"Lee",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Jet_Li_2009_%28cropped%29.jpg/1200px-Jet_Li_2009_%28cropped%29.jpg",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/PhilTufnell.jpg/150px-PhilTufnell.jpg",
         "scores":[
             4,
             2,
@@ -155,7 +155,7 @@ var friends = [
     {
         "firstName":"Paul",
         "lastName":"Garrison",
-        "photo":"https://upload.wikimedia.org/wikipedia/commons/a/a8/Dustin_Brown_14%2C_2015_Wimbledon_Qualifying_-_Diliff.jpg",
+        "photo":"https://celebritypictures.wiki/images/4476708/4476708_4.jpeg",
         "scores":[
             5,
             5,

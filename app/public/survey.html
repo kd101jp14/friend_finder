@@ -17,6 +17,7 @@
     />
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
   </head>
 
   <body>
@@ -203,7 +204,7 @@
             <img
               id="matching"
               src="https://via.placeholder.com/150"
-              alt="Placeholder image for failure to load match's image"
+              alt="Placeholder for failure to load match's image"
             />
           </div>
           <div class="modal-footer">
@@ -260,8 +261,7 @@
 
           $("#matchName").text(data.firstName + " " + data.lastName);
           var friendPic = data.photo;
-          friendPic.height = "100px";
-          friendPic.width = "200px";
+          console.log(friendPic);
           $("#matching").attr("src", friendPic);
           $("#resultsModal").modal("toggle");
         });
