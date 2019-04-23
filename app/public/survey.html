@@ -193,10 +193,10 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
+            <h2 class="modal-title"><strong>Best Match</strong></h2>
             <button type="button" class="close" data-dismiss="modal">
               &times;
             </button>
-            <h2 class="modal-title"><strong>Best Match</strong></h2>
           </div>
           <div class="modal-body">
             <h2 id="matchName"></h2>
@@ -245,7 +245,10 @@
 
         $.post("/api/friends", userData, function(data) {
           $("#matchName").text(data.firstName + " " + data.lastName);
-          $("#matching").attr("src", data.photo);
+          var friendPic = data.photo;
+          friendPic.height = "100px";
+          friendPic.width = "200px";
+          $("#matching").attr("src", friendPic);
           $("#resultsModal").modal("toggle");
         });
       });

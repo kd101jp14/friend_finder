@@ -13,7 +13,7 @@ module.exports = function(app) {
     var bestMatch = {
       name: "",
       photo: "",
-      friendDifference: 0
+      friendDifference: 1000
     };
     // Parse data from the user
     var userData = req.body;
@@ -25,8 +25,8 @@ module.exports = function(app) {
       return parseInt(item, 10);
     });
     userData = {
-      name: req.body.firstName + " " + req.body.lastName,
-      photo: req.body.photo,
+      name: userName,
+      photo: userData.photo,
       scores: b
     };
 
@@ -36,7 +36,7 @@ module.exports = function(app) {
 
     // Add up user scores
     var sum = b.reduce(function(a, b) {
-      return a + b, 0;
+      return a + b;
     });
     console.log("Sum of user's score: " + sum);
     console.log("Best Match Friend Difference: " + bestMatch.friendDifference);
@@ -52,7 +52,7 @@ module.exports = function(app) {
       );
 
       var bFriendScore = friends[i].scores.reduce(function(a, b) {
-        return a + b, 0;
+        return a + b;
       });
       console.log("Total Friend Score: " + bFriendScore);
       totalDifference += Math.abs(sum - bFriendScore);
