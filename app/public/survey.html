@@ -30,19 +30,29 @@
           Answer 10 questions to find a similar friend!
         </h2>
         <p class="text-center">
-          Please select an answer from 1 to 10, 1 being "completely disagree" and
-          5 being "completely agree."
+          Please select an answer from 1 to 10, 1 being "completely disagree"
+          and 5 being "completely agree."
         </p>
         <br />
         <form>
           <div class="form-row">
             <div class="col">
               <label for="firstName">First Name</label>
-              <input type="text" class="form-control" placeholder="Jane" />
+              <input
+                type="text"
+                id="firstName"
+                class="form-control"
+                placeholder="Jane"
+              />
             </div>
             <div class="col">
               <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" placeholder="Doe" />
+              <input
+                type="text"
+                id="lastName"
+                class="form-control"
+                placeholder="Doe"
+              />
             </div>
           </div>
           <br />
@@ -174,3 +184,59 @@
     </div>
   </body>
 </html>
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+  // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+  // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+  // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+  // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+  $("#submitButton").on("click", function(event) {
+    event.preventDefault();
+
+    // Grab the form elements
+    var userAnswers = {
+      firstName: $("#firstName").val(),
+      lastName: $("#lastName").val(),
+      question1: $("#answer1").val(),
+      question2: $("#answer2").val(),
+      question3: $("#answer3").val(),
+      question4: $("#answer4").val(),
+      question5: $("#answer5").val(),
+      question6: $("#answer6").val(),
+      question7: $("#answer7").val(),
+      question8: $("#answer8").val(),
+      question9: $("#answer9").val(),
+      question10: $("#answer10").val()
+    };
+
+    console.log(userAnswers);
+
+    // This line is the magic. It"s very similar to the standard ajax function
+    // we used.
+    // Essentially we give it a URL, we give it the object we want to send,
+    // then we have a "callback".
+    // The callback is the response of the server.
+    // In our case, we set up code in api-routes that "returns" true or false
+    // depending on if a tables is available or not.
+
+    // Clear the form when submitting
+    $("#firstName").val(""),
+      $("#lastName").val(""),
+      $("#answer1").val("1");
+      $("#answer2").val("1");
+      $("#answer3").val("1");
+      $("#answer4").val("1");
+      $("#answer5").val("1");
+      $("#answer6").val("1");
+      $("#answer7").val("1");
+      $("#answer8").val("1");
+      $("#answer9").val("1");
+      $("#answer10").val("1");
+
+    $.post("/api/friends", userAnswers, function(data) {
+      alert("Yay! Your new friend is...");
+    });
+  });
+</script>
