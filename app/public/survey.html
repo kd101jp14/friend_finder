@@ -244,6 +244,20 @@
         };
 
         $.post("/api/friends", userData, function(data) {
+          // Clear the form when submitting
+          $("#firstName").val("");
+          $("#lastName").val("");
+          $("#answer1").val("1");
+          $("#answer2").val("1");
+          $("#answer3").val("1");
+          $("#answer4").val("1");
+          $("#answer5").val("1");
+          $("#answer6").val("1");
+          $("#answer7").val("1");
+          $("#answer8").val("1");
+          $("#answer9").val("1");
+          $("#answer10").val("1");
+
           $("#matchName").text(data.firstName + " " + data.lastName);
           var friendPic = data.photo;
           friendPic.height = "100px";
