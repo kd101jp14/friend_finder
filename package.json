@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/kd101jp14/friend_finder#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4"
   }
 }
