@@ -176,7 +176,7 @@
           <div class="container">
             <p>
               <a href="/api/friends">All Possible Friends</a> |
-              <a href="/home">Home</a>
+              <a href="/">Home</a>
             </p>
           </div>
         </footer>
@@ -195,10 +195,14 @@
   $("#submitButton").on("click", function(event) {
     event.preventDefault();
 
-    // Grab the form elements
-    var userAnswers = {
-      firstName: $("#firstName").val(),
-      lastName: $("#lastName").val(),
+    // Here we grab the form elements
+    var newUser = {
+      firstName: $("#firstName")
+        .val()
+        .trim(),
+      lastName: $("#lastName")
+        .val()
+        .trim(),
       question1: $("#answer1").val(),
       question2: $("#answer2").val(),
       question3: $("#answer3").val(),
@@ -211,19 +215,14 @@
       question10: $("#answer10").val()
     };
 
-    console.log(userAnswers);
+    console.log(newUser);
 
-    // This line is the magic. It"s very similar to the standard ajax function
-    // we used.
-    // Essentially we give it a URL, we give it the object we want to send,
-    // then we have a "callback".
-    // The callback is the response of the server.
-    // In our case, we set up code in api-routes that "returns" true or false
-    // depending on if a tables is available or not.
+    $.post("/api/friends", newUser, function(data) {
+      alert("Your new friend is...");
 
-    // Clear the form when submitting
-    $("#firstName").val(""),
-      $("#lastName").val(""),
+      // Clear the form when submitting
+      $("#firstName").val("");
+      $("#lastName").val("");
       $("#answer1").val("1");
       $("#answer2").val("1");
       $("#answer3").val("1");
@@ -234,9 +233,6 @@
       $("#answer8").val("1");
       $("#answer9").val("1");
       $("#answer10").val("1");
-
-    $.post("/api/friends", userAnswers, function(data) {
-      alert("Yay! Your new friend is...");
     });
   });
 </script>
