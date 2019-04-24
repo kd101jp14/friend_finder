@@ -11,53 +11,50 @@ module.exports = function(app) {
   app.post("/api/friends", function(req, res) {
     var totalDifference = 0;
     var bestMatch = {
-      name: "",
+      firstName: "",
+      lastName: "",
       photo: "",
-      friendDifference: 1000
+      friendDifference: null
     };
     // Parse data from the user
     var userData = req.body;
-    var userName = userData.firstName + " " + userData.lastName;
     var userScores = userData.scores;
 
     // Save scores by looping through and returning integers
     var b = userScores.map(function(item) {
       return parseInt(item, 10);
     });
+
     userData = {
-      name: userName,
+      firstName: userData.firstName,
+      lastName: userData.lastName,
       photo: userData.photo,
       scores: b
     };
 
     // Log results
-    console.log("Name: " + userName);
+    console.log("Name: " + userData.firstName + " " + userData.lastName);
     console.log("User Score: " + userScores);
 
     // Add up user scores
     var sum = b.reduce(function(a, b) {
       return a + b;
-    });
+    }, 0);
     console.log("Sum of user's score: " + sum);
-    console.log("Best Match Friend Difference: " + bestMatch.friendDifference);
     console.log("******************************");
 
     // Loop through all possible friends
     for (var i = 0; i < friends.length; i++) {
       console.log(friends[i].firstName + " " + friends[i].lastName);
       totalDifference = 0;
-      console.log("Total Difference: " + totalDifference);
-      console.log(
-        "Best Match Friend Difference: " + bestMatch.friendDifference
-      );
 
       var bFriendScore = friends[i].scores.reduce(function(a, b) {
         return a + b;
-      });
+      },0);
       console.log("Total Friend Score: " + bFriendScore);
       totalDifference += Math.abs(sum - bFriendScore);
-      console.log("---------------->" + totalDifference);
-
+      console.log("----------------> Total Difference " + totalDifference);
+   
       // Determine best match, using if statement
       if (totalDifference <= bestMatch.friendDifference) {
         bestMatch.firstName = friends[i].firstName;
@@ -65,7 +62,6 @@ module.exports = function(app) {
         bestMatch.photo = friends[i].photo;
         bestMatch.friendDifference = totalDifference;
       }
-      console.log("Total Difference: " + totalDifference);
     }
 
     // Log results, save user data, and display JSON of best match
